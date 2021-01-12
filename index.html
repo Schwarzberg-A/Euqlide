@@ -110,7 +110,7 @@
       <p class="design-solution__text">
         Есть над чем задуматься: базовые сценарии поведения пользователей и по сей день остаются уделом проектантов
       </p>
-      <a href="#" class="design-solution__btn btn">Заказать расчет</a>
+      <a href="#" class="design-solution__btn orange-btn btn">Заказать расчет</a>
     </article>
 
 
@@ -282,33 +282,42 @@
       </h2>
       <ul class="how-we-work__steps">
         <li class="how-we-work__step">
-          <button class="how-we-work__step-btn how-we-work__btn--active">
+          <a class="how-we-work__step-btn how-we-work__btn--active" tabindex="0" data-step="1">
             1 шаг
-          </button>
+          </a>
         </li>
         <li class="how-we-work__step">
-          <button class="how-we-work__step-btn">
+          <a class="how-we-work__step-btn" tabindex="0" data-step="2">
             2 шаг
-          </button>
+          </a>
         </li>
         <li class="how-we-work__step">
-          <button class="how-we-work__step-btn">
+          <a class="how-we-work__step-btn" tabindex="0" data-step="3">
             3 шаг
-          </button>
+          </a>
         </li>
         <li class="how-we-work__step">
-          <button class="how-we-work__step-btn">
+          <a class="how-we-work__step-btn" tabindex="0" data-step="4">
             4 шаг
-          </button>
+          </a>
         </li>
       </ul>
       <figure class="how-we-work__wrapper">
         <caption>
           <div class="how-we-work__left">
-            <h3 class="how-we-work__left-heading heading">
+            <h3 class="how-we-work__left-heading heading" data-head="1">
               Проводим консультацию
             </h3>
-            <p class="how-we-work__left-content">
+            <h3 class="how-we-work__left-heading heading display-none" data-head="2">
+              Составляем смету 
+            </h3>
+            <h3 class="how-we-work__left-heading heading display-none" data-head="3">
+              Привлекаем подрядчиков
+            </h3>
+            <h3 class="how-we-work__left-heading heading display-none" data-head="4">
+              Инспектируем все этапы работ
+            </h3>
+            <p class="how-we-work__left-content" data-text="1">
               Влечет за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации
               современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены
               соответствующими инстанциями. А также представители современных социальных резервов, инициированные
@@ -318,7 +327,16 @@
               исследований. Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно
               интересные особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.
             </p>
-            <button class="how-we-work__detailed-btn btn">
+            <p class="how-we-work__left-content display-none" data-text="2">
+              Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.
+            </p>
+            <p class="how-we-work__left-content display-none" data-text="3">
+              Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.os harum voluptatem quis eum doloribus distinctio? Ipsa consequatur mollitia voluptas ab nobis?
+            </p>
+            <p class="how-we-work__left-content display-none" data-text="4">
+              Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.
+            </p>
+            <button class="how-we-work__detailed-btn orange-btn btn">
               Подробнее
             </button>
             <a href="#" class="how-we-work__contract-btn btn">
@@ -328,9 +346,24 @@
         </caption>
         <!-- <aside class="how-we-work__right">
         </aside> -->
-        <picture class="how-we-work__right">
-          <source class="how-we-work__right-img" srcset="img/office_man.jpg 1x, img/office_man@2x.jpg 2x">
-          <img class="how-we-work__right-img" src="img/office_man.jpg"
+        <picture class="how-we-work__right " data-pic="1">
+          <source class="how-we-work__right-img" srcset="img/how_full/office_man.jpg 1x, img/how_full/office_man@2x.jpg 2x">
+          <img class="how-we-work__right-img" src="img/how_full/office_man.jpg"
+            alt="на картинке изображено, как наши специалисты проводят консультацию">
+        </picture>
+        <picture class="how-we-work__right display-none" data-pic="2">
+          <source class="how-we-work__right-img" srcset="img/how_full/office_man1.jpg 1x, img/how_full/office_man1@2x.jpg 2x">
+          <img class="how-we-work__right-img" src="img/how_full/office_man1.jpg"
+            alt="на картинке изображено, как наши специалисты проводят консультацию">
+        </picture>
+        <picture class="how-we-work__right display-none" data-pic="3">
+          <source class="how-we-work__right-img" srcset="img/how_full/office_man2.jpg 1x, img/how_full/office_man2@2x.jpg 2x">
+          <img class="how-we-work__right-img" src="img/how_full/office_man2.jpg"
+            alt="на картинке изображено, как наши специалисты проводят консультацию">
+        </picture>
+        <picture class="how-we-work__right display-none" data-pic="4">
+          <source class="how-we-work__right-img" srcset="img/how_full/office_man3.jpg 1x, img/how_full/office_man3@2x.jpg 2x">
+          <img class="how-we-work__right-img" src="img/office_man3.jpg"
             alt="на картинке изображено, как наши специалисты проводят консультацию">
         </picture>
       </figure>
@@ -591,7 +624,7 @@
         <input class="footer-input__email" required name="email" type="email" id="email" placeholder=" E-mail*"
           minlength="2" maxlength="100">
         <textarea class="footer__textarea" name="textarea" id="" cols="100" rows="8"></textarea>
-        <button type="submit" class="footer__submit-btn btn">Отправить данные</button>
+        <button type="submit" class="footer__submit-btn orange-btn btn">Отправить данные</button>
         <div class="footer-input__check-wrapper">
           <input class="footer-input__check src-only" checked required name="checkbox" type="checkbox" id="check">
           <label for="check" class="footer__check-label">Согласен на обработу данных</label>
