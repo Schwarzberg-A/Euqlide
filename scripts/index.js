@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   $("#accordion").accordion({ collapsible: true });
   $("#accordion").accordion("option", "active", null);
+  $("#accordion").accordion({ heightStyle: "content" });
 
 
   // document.querySelector("#accordion").addEventListener('click', () => {
@@ -64,108 +65,115 @@ window.addEventListener('DOMContentLoaded', function () {
       wrapper.style.opacity = pos;
 
       let id = setInterval(() => {
-        pos = pos - 0.1; 
-        if (pos < 0.01) {
+        pos = pos - .1;
+        if (pos <= 0) {
           clearInterval(id);
+
+          links.forEach((e) => {
+            e.classList.remove('how-we-work__btn--active');
+          })
+          ev.target.classList.add('how-we-work__btn--active');
+
+          headList.forEach((elem) => {
+            elem.classList.add('display-none');
+            if (elem.dataset.head === ev.target.dataset.step) {
+              elem.classList.remove('display-none');
+            }
+          })
+
+          pics.forEach((elem) => {
+            elem.classList.add('display-none');
+            if (elem.dataset.pic === ev.target.dataset.step) {
+              elem.classList.remove('display-none');
+            }
+          })
+
+          contentList.forEach((el) => {
+            el.classList.add('display-none');
+            if (el.dataset.text === ev.target.dataset.step) {
+              el.classList.remove('display-none');
+            }
+          })
+
           i();
         } else {
           wrapper.style.opacity = pos;
         }
       }, 30);
-    function i () {
-      let id = setInterval(() => {
-        pos = pos + 0.1; 
-        if (pos > 0.99) {
-          clearInterval(id)
-        } else {
-          wrapper.style.opacity = pos;
-        }
-      }, 30);
-    }
+
+      function i() {
+        let id = setInterval(() => {
+          pos = pos + 0.1;
+          if (pos >= 1) {
+            clearInterval(id)
+          } else {
+            wrapper.style.opacity = pos;
+          }
+        }, 30);
+      }
 
 
-      links.forEach((e) => {
-        e.classList.remove('how-we-work__btn--active');
-      })
-      ev.target.classList.add('how-we-work__btn--active');
 
-      headList.forEach((elem) => {
-        elem.classList.add('display-none');
-        if (elem.dataset.head === ev.target.dataset.step) {
-          elem.classList.remove('display-none');
-        }
-      })
-
-      pics.forEach((elem) => {
-        elem.classList.add('display-none');
-        if (elem.dataset.pic === ev.target.dataset.step) {
-          elem.classList.remove('display-none');
-        }
-      })
-
-      contentList.forEach((el) => {
-        el.classList.add('display-none');
-        if (el.dataset.text === ev.target.dataset.step) {
-          el.classList.remove('display-none');
-        }
-      })
     }
   })
 
   links.forEach((el) => {
     el.addEventListener('focus', (ev) => {
+      if (ev.target.tagName == 'A') {
+        pos = 1;
+        wrapper.style.opacity = pos;
 
-      pos = 1;
-      wrapper.style.opacity = pos;
+        let id = setInterval(() => {
+          pos = pos - 0.1;
+          if (pos < 0.01) {
+            clearInterval(id);
 
-      let id = setInterval(() => {
-        pos = pos - 0.1; 
-        if (pos < 0.01) {
-          clearInterval(id);
-          i();
-        } else {
-          wrapper.style.opacity = pos;
+            links.forEach((e) => {
+              e.classList.remove('how-we-work__btn--active');
+            })
+            ev.target.classList.add('how-we-work__btn--active');
+
+            headList.forEach((elem) => {
+              elem.classList.add('display-none');
+              if (elem.dataset.head === ev.target.dataset.step) {
+                elem.classList.remove('display-none');
+              }
+            })
+
+            pics.forEach((elem) => {
+              elem.classList.add('display-none');
+              if (elem.dataset.pic === ev.target.dataset.step) {
+                elem.classList.remove('display-none');
+              }
+            })
+
+            contentList.forEach((el) => {
+              el.classList.add('display-none');
+              if (el.dataset.text === ev.target.dataset.step) {
+                el.classList.remove('display-none');
+              }
+            })
+
+            i();
+          } else {
+            wrapper.style.opacity = pos;
+          }
+        }, 30);
+        function i() {
+          let id = setInterval(() => {
+            pos = pos + 0.1;
+            if (pos > 0.99) {
+              clearInterval(id)
+            } else {
+              wrapper.style.opacity = pos;
+            }
+          }, 30);
         }
-      }, 30);
-    function i () {
-      let id = setInterval(() => {
-        pos = pos + 0.1; 
-        if (pos > 0.99) {
-          clearInterval(id)
-        } else {
-          wrapper.style.opacity = pos;
-        }
-      }, 30);
-    }
 
 
-    if (ev.target.tagName == 'A') {
-      links.forEach((e) => {
-        e.classList.remove('how-we-work__btn--active');
-      })
-      ev.target.classList.add('how-we-work__btn--active');
 
-      headList.forEach((elem) => {
-        elem.classList.add('display-none');
-        if (elem.dataset.head === ev.target.dataset.step) {
-          elem.classList.remove('display-none');
-        }
-      })
 
-      pics.forEach((elem) => {
-        elem.classList.add('display-none');
-        if (elem.dataset.pic === ev.target.dataset.step) {
-          elem.classList.remove('display-none');
-        }
-      })
-
-      contentList.forEach((el) => {
-        el.classList.add('display-none');
-        if (el.dataset.text === ev.target.dataset.step) {
-          el.classList.remove('display-none');
-        }
-      })
-    }
+      }
     })
   })
 

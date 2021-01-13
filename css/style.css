@@ -897,11 +897,14 @@ cursor: pointer;
 .accordion-heading:last-child {
   border-bottom: 1px solid #CACACA;
 }
+ 
+.accordion-heading p {
+  padding-bottom: 40px;
+}
   
 .ui-accordion-header-active  span{
   transform: rotate(-45deg);
 }
-
 
 /* ==============contants============================================================================ */
 
@@ -1001,7 +1004,7 @@ cursor: pointer;
 .footer__textarea {
   width: 100%;
   margin-bottom: 25px;
-  padding: 1px 10px 1px 10px;
+  padding: 10px 10px 10px 10px;
   color: var(--color2);
   background-color: #414141;
   border: none;
@@ -1402,6 +1405,16 @@ cursor: pointer;
     order: 2;
   }
 
+  .how-we-work__steps {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .how-we-work__step-btn {
+    padding: 15px;
+    white-space: nowrap;
+  }
+
   .how-we-work__right {
     margin-bottom: 30px;
   }
@@ -1571,7 +1584,7 @@ cursor: pointer;
   }
 
   .questions__item-link {
-    font-size: 18px;
+    font-size: 18px !important;
   }
 
   .footer-nav {
@@ -1628,7 +1641,7 @@ cursor: pointer;
 
 }
 
-@media (max-width: 380px) {
+@media  (max-width: 380px) {
 
   .heading {
     font-size: 28px;
@@ -1722,13 +1735,18 @@ cursor: pointer;
     background-size: 60px;
   }
 
-  .questions__item-link {
+  #accordion .ui-accordion-header {
     padding: 15px 55px 15px 0;
     font-weight: 400;
     font-size: 14px;
     line-height: 25px;
     background-size: 35px;
   }
+
+  /* .ui-accordion-content {
+    height: 734px !important;
+  } */
+
 
   .footer-form__wrapper {
     max-width: 100%;
