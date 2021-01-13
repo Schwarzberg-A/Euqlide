@@ -27,6 +27,8 @@ window.addEventListener('DOMContentLoaded', function () {
   $("#accordion").accordion("option", "active", null);
   $("#accordion").accordion({ heightStyle: "content" });
 
+ 
+
 
   // document.querySelector("#accordion").addEventListener('click', () => {
   //   document.querySelectorAll("#accordion .accordion-heading").forEach(function(el) {
@@ -58,67 +60,68 @@ window.addEventListener('DOMContentLoaded', function () {
   let wrapper = document.querySelector('.how-we-work__wrapper');
   let pos;
 
-  btnList.addEventListener('click', (ev) => {
-    if (ev.target.tagName == 'A') {
+  // btnList.addEventListener('click', (ev) => {
+  //   if (ev.target.tagName == 'A') {
 
-      pos = 1;
-      wrapper.style.opacity = pos;
+  //     pos = 1;
+  //     wrapper.style.opacity = pos;
 
-      let id = setInterval(() => {
-        pos = pos - .1;
-        if (pos <= 0) {
-          clearInterval(id);
+  //     let id = setInterval(() => {
+  //       pos = pos - .1;
+  //       if (pos <= 0) {
+  //         clearInterval(id);
 
-          links.forEach((e) => {
-            e.classList.remove('how-we-work__btn--active');
-          })
-          ev.target.classList.add('how-we-work__btn--active');
+  //         links.forEach((e) => {
+  //           e.classList.remove('how-we-work__btn--active');
+  //         })
+  //         ev.target.classList.add('how-we-work__btn--active');
 
-          headList.forEach((elem) => {
-            elem.classList.add('display-none');
-            if (elem.dataset.head === ev.target.dataset.step) {
-              elem.classList.remove('display-none');
-            }
-          })
+  //         headList.forEach((elem) => {
+  //           elem.classList.add('display-none');
+  //           if (elem.dataset.head === ev.target.dataset.step) {
+  //             elem.classList.remove('display-none');
+  //           }
+  //         })
 
-          pics.forEach((elem) => {
-            elem.classList.add('display-none');
-            if (elem.dataset.pic === ev.target.dataset.step) {
-              elem.classList.remove('display-none');
-            }
-          })
+  //         pics.forEach((elem) => {
+  //           elem.classList.add('display-none');
+  //           if (elem.dataset.pic === ev.target.dataset.step) {
+  //             elem.classList.remove('display-none');
+  //           }
+  //         })
 
-          contentList.forEach((el) => {
-            el.classList.add('display-none');
-            if (el.dataset.text === ev.target.dataset.step) {
-              el.classList.remove('display-none');
-            }
-          })
+  //         contentList.forEach((el) => {
+  //           el.classList.add('display-none');
+  //           if (el.dataset.text === ev.target.dataset.step) {
+  //             el.classList.remove('display-none');
+  //           }
+  //         })
 
-          i();
-        } else {
-          wrapper.style.opacity = pos;
-        }
-      }, 30);
+  //         i();
+  //       } else {
+  //         wrapper.style.opacity = pos;
+  //       }
+  //     }, 30);
 
-      function i() {
-        let id = setInterval(() => {
-          pos = pos + 0.1;
-          if (pos >= 1) {
-            clearInterval(id)
-          } else {
-            wrapper.style.opacity = pos;
-          }
-        }, 30);
-      }
+  //     function i() {
+  //       let id = setInterval(() => {
+  //         pos = pos + 0.1;
+  //         if (pos >= 1) {
+  //           clearInterval(id)
+  //         } else {
+  //           wrapper.style.opacity = pos;
+  //         }
+  //       }, 30);
+  //     }
 
 
 
-    }
-  })
+  //   }
+  // })
 
   links.forEach((el) => {
     el.addEventListener('focus', (ev) => {
+      
       if (ev.target.tagName == 'A') {
         pos = 1;
         wrapper.style.opacity = pos;

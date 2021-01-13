@@ -188,9 +188,6 @@ img {
 }
 
 
-.header__little-nav {
-  display: none;
-}
 
 .header-little-nav__item {
   box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
@@ -897,13 +894,13 @@ cursor: pointer;
 .accordion-heading:last-child {
   border-bottom: 1px solid #CACACA;
 }
- 
-.accordion-heading p {
-  padding-bottom: 40px;
-}
   
 .ui-accordion-header-active  span{
   transform: rotate(-45deg);
+}
+
+.ui-accordion-content-active  {
+  overflow-y: scroll;
 }
 
 /* ==============contants============================================================================ */
@@ -1280,8 +1277,43 @@ cursor: pointer;
     display: none;
   }
 
+  @keyframes deploy {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    80% {
+      opacity: 0;
+    }
+    100%  {
+      height: 448px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes rollup {
+    0% {
+      height: 448px;
+      opacity: 1;
+    }
+    20% {
+      opacity: 0;
+    }
+    100%  {
+      opacity: 0;
+      height: 0;
+    }
+  }
+  
+  .header__little-nav {
+    animation: rollup normal 500ms linear 1;
+    animation-fill-mode: forwards;
+  }
+
   .flex {
-    display: flex;
+    /* display: flex; */
+    animation: deploy normal 500ms linear 1;
+    animation-fill-mode: forwards;
   }
 
   .header-little-nav__list {
@@ -1428,8 +1460,9 @@ cursor: pointer;
     display: none;
   }
 
-  .questions__item-link {
-    font-size: 20px;
+
+  #accordion .ui-accordion-header {
+    font-size: 18px;
   }
 
   .footer {
@@ -1583,8 +1616,9 @@ cursor: pointer;
     line-height: 22px;
   }
 
-  .questions__item-link {
-    font-size: 18px !important;
+  #accordion .ui-accordion-header-icon {
+    width: 30px;
+    height: 30px;
   }
 
   .footer-nav {
@@ -1742,11 +1776,6 @@ cursor: pointer;
     line-height: 25px;
     background-size: 35px;
   }
-
-  /* .ui-accordion-content {
-    height: 734px !important;
-  } */
-
 
   .footer-form__wrapper {
     max-width: 100%;
